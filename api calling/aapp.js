@@ -54,44 +54,72 @@
 
 
 // async function callApi2(){
-//     let resp = await axios.get("https://api.tvmaze.com/search/shows?q=girls");
+//     let resp = await axios.get('https://api.github.com/users/jainaadeesh');
 //     console.log(resp.data); 
 // }
 // callApi2()
 
+//------------------------------------------
+// call api using fatch and promise
 
-// ------------------------------------------
-//calling api with async await
-
-// let arrApi = [
-//     'https://api.github.com/users/Samarth0606',
+// let arrapi = [
+//     'https://api.github.com/users/jainaadeesh',
 //     'https://api.github.com/users/alokiit',
-//     'https://api.github.com/users/jainaa',
+//     'https://api.github.com/users/samarth0606'
 // ]
 
+// for (const arr of arrapi) {
+//     fetch(arr)
+//     .then((res)=>res.json())
+//     .then((data)=>console.log(data))
+//     .catch((err)=>console.log(err))
+// }
 
-// async function fetchApi(){
-    //     let response = await Promise.all(arrApi.map(url => fetch(url)));
-    //     let data = await Promise.all(response.map(res => res.json()));
-    //     console.log(data);
-    // }
-    // fetchApi();
+// //-----------------------
+// //call api using axios and promise
 
-//-----------------------------------
-//calling api with fatch 
-//using promice
-    
- let arrApi = [
-        'https://api.github.com/users/Samarth0606',
-        'https://api.github.com/users/alokiit',
-        'https://api.github.com/users/jainaa',
- ]
+// let arrrapi = [
+//     'https://api.github.com/users/samarth0606',
+//     'https://api.github.com/users/jainaadeesh',
+//     'https://api.github.com/users/alokiit'
+// ]
 
-for (const Api of arrApi) {
-    fetch(Api)//fatch
-    .then((risponce)=>risponce.json())
-    .then((data)=>console.log(data))
-    .catch((err)=>console.log(err))
+// for (const arr of arrrapi) {
+//     axios.get(arr)
+//     .then((data)=>console.log(data))
+//     .catch((err)=>console.log(err))
+// }
+
+//-------------------------------------
+//call api with fatch and async-await
+
+// let ararapi = [
+//     'https://jsonplaceholder.typicode.com/todos/1',
+//     'https://jsonplaceholder.typicode.com//photos',
+//     'https://jsonplaceholder.typicode.com//users'
+// ]
+
+// async function apicall(ararapi) {
+//     let res = await Promise.all(ararapi.map(api=>fetch(api)))
+//     let data = await Promise.all(res.map(r=>r.json()))
+//     console.log(data);
+// }
+
+// apicall(ararapi)
+
+//-------------------------------------
+//call api with axios and async-await
+
+let ararapii = [
+    'https://jsonplaceholder.typicode.com/todos/1',
+    'https://jsonplaceholder.typicode.com/posts/1/comments',
+    'https://jsonplaceholder.typicode.com/users'
+]
+
+async function apicalll(ararapii) {
+    let res = await Promise.all(ararapii.map(api=>axios.get(api)))
+    let data = res.map(r=>r.data)
+    console.log(...data);
 }
 
-
+apicalll(ararapii)
